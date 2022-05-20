@@ -13,23 +13,23 @@ public class WeatherService {
 	@GET
 	@Path("current")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getWeatherByCity(@QueryParam("city") String city){
-		
+	public Response getWeatherByCity(@QueryParam("city") String city) {
+
 		System.out.println(city);
-		WeatherDataService service = new WeatherDataService();		
+		WeatherDataService service = new WeatherDataService();
 		String weather = service.getWeatherByCity(city);
 
 		return Response.ok(weather).build();
 	}
-	
+
 	@GET
 	@Path("coord")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getWeatherByCoord(@QueryParam("lat") String lat, @QueryParam("lon") String lon){
-		
+	public Response getWeatherByCoord(@QueryParam("lat") String lat, @QueryParam("lon") String lon) {
+
 		WeatherDataService service = new WeatherDataService();
 		String weather = service.getWeatherByCoordinates(lat, lon);
-		
+
 		return Response.ok(weather).build();
 	}
 }
