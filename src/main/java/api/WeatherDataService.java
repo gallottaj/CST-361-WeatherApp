@@ -16,7 +16,7 @@ public class WeatherDataService {
 	public String getWeatherByCity(String key){
 		
 		Client client = ClientBuilder.newBuilder().build();
-		WebTarget target = client.target("https://api.openweathermap.org/data/2.5/weather?q=" + key + "&appid=75b5a45fe3c22f478a2199b9a43a69ac");
+		WebTarget target = client.target("https://api.openweathermap.org/data/2.5/weather?q=" + key + "&appid=75b5a45fe3c22f478a2199b9a43a69ac&units=imperial");
 		Response response = target.request().get();
 		
 		String value = response.readEntity(String.class);
@@ -28,7 +28,7 @@ public class WeatherDataService {
 	public String getWeatherByCoordinates(String lat, String lon){
 		
 		Client client = ClientBuilder.newBuilder().build();
-		WebTarget target = client.target("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=75b5a45fe3c22f478a2199b9a43a69ac");
+		WebTarget target = client.target("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=75b5a45fe3c22f478a2199b9a43a69ac&units=imperial");
 		Response response = target.request().get();
 		
 		String value = response.readEntity(String.class);
