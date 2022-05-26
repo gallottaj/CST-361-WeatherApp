@@ -1,5 +1,6 @@
 package beans;
 
+<<<<<<< HEAD
 public class Weather {
 
 	String name = "";
@@ -117,4 +118,8 @@ public class Weather {
 				+ ", temp_low=" + temp_low + ", temp_high=" + temp_high + ", feels_like=" + feels_like + ", humidity="
 				+ humidity + ", description=" + description + "]";
 	}
+=======
+public interface Weather {
+	Weather notifyUser();
+>>>>>>> 0d380a50c5ed1aab9925ee23622750cfe4366326
 }
